@@ -60,7 +60,7 @@ namespace MIMS
 
         public static DataTable GetDoctors(string field)
         {
-            string query = "select distinct worker.name from worker, doctor where worker.id=doctor.id and doctor.specialization='" + field + "'";
+            string query = "select distinct doctor.name from worker, doctor where worker.id=doctor.id and doctor.specialization='" + field + "'";
             try
             {
                 DataTable dt = AdoHelper.ExecuteDataTable(query);
@@ -72,6 +72,19 @@ namespace MIMS
             }
         }
 
+        public static DataTable Getappointment(string id)
+        {
+            string query = "select docname as doctor, day,hour,clinic from appointment where paitentid='" + id + "'";
+            try
+            {
+                DataTable dt = AdoHelper.ExecuteDataTable(query);
+                return dt;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         public static DataTable Getfields()
         {
             string query = "select distinct specialization from doctor";// where specialization<>'nurse'";
@@ -133,7 +146,11 @@ namespace MIMS
         {
             string query1 = "select * from requests";
               DataTable dt = AdoHelper.ExecuteDataTable(query1);
-              int i = dt.Rows.Count+ 175;
+              int i = 0;
+              for (int j = 0; j < dt.Rows.Count; j++)
+                  if (Int32.Parse(dt.Rows[j]["idrow"].ToString()) > i)
+                      i = Int32.Parse(dt.Rows[j]["idrow"].ToString());
+              i++;
             string query = "Insert into requests values("+i+" , '" + content + "' , '" + ID + " ', '" + subject + "' , '" + name +"','" + DateTime.Now + "','"+ phone + "')";
         AdoHelper.ExecuteNonQuery(query);
         }
@@ -142,8 +159,18 @@ namespace MIMS
         {
             string query1 = "select * from appointment";
             DataTable dt = AdoHelper.ExecuteDataTable(query1);
-            int i = dt.Rows.Count+1;
+            int i=0;
+            for (int j = 0; j < dt.Rows.Count; j++)
+                if (Int32.Parse( dt.Rows[j]["ident"].ToString()) > i)
+                    i = Int32.Parse( dt.Rows[j]["ident"].ToString());
+            i++;
             string query = "Insert into appointment values(" + i + " , '" + id + "' , '" + docname + " ', '" + day + "' , '" + hour + "','" + clinic + "')";
+            AdoHelper.ExecuteNonQuery(query);
+        }
+
+        public static void deleteappointment(string id, string docname, string day, string hour, string clinic)
+        {
+            string query = "Delete from appointment where paitentid='" + id + "' and docname='" + docname + "' and day='" + day + "' and hour='" + hour + "' and clinic='" + clinic + "'";
             AdoHelper.ExecuteNonQuery(query);
         }
        

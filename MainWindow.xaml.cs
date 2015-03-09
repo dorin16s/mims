@@ -29,6 +29,7 @@ namespace MIMS
             Loginwin.DataAvailable += new EventHandler(Login_DataAvailable);
             Docrequest.RequestAvailable += new EventHandler(request_DataAvailable);
             appointmentrequest.appointmentAvailable += new EventHandler(request_DataAvailable);
+            cancle.cancletAvailable += new EventHandler(request_DataAvailable);
         }
 
         void Login_DataAvailable(object sender, EventArgs e)
@@ -115,10 +116,19 @@ namespace MIMS
             appointmentrequest.AddFields(id);
         }
 
+        private void Loade_cancle()
+        {
+            disapere();
+            cancle.Visibility = System.Windows.Visibility.Visible;
+            cancle.filltable(id);
+        }
+
 
         private void disapere()
         {
+            cancle.Visibility = System.Windows.Visibility.Hidden;
             Docrequest.clear();
+            cancle.clear();
             docView1.Visibility = System.Windows.Visibility.Hidden;
             sec.Visibility = System.Windows.Visibility.Hidden;
             manager1.Visibility = System.Windows.Visibility.Hidden;
@@ -154,6 +164,16 @@ namespace MIMS
             btn_home.Visibility = System.Windows.Visibility.Visible;
         }
 
+
+        private void btn_cacncle_Click(object sender, RoutedEventArgs e)
+        {
+            disapere();
+            Loade_cancle();
+                btn_diconnect.Visibility = System.Windows.Visibility.Visible;
+               if (cancle.number != 0)
+                btn_home.Visibility = System.Windows.Visibility.Visible;
+
+        }
    
 
         private void btn_home_Click(object sender, RoutedEventArgs e)

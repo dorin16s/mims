@@ -12,7 +12,7 @@
         <Button x:Name="btn_appointment"  Content="schedule appointment" HorizontalAlignment="Left" Margin="225,85,0,0" VerticalAlignment="Top" Width="160" Height="120" Click="Button_Click_2"/>
         <Button  x:Name="btn_home"  Content="home" HorizontalAlignment="Left" Margin="450,39,0,0" VerticalAlignment="Top" Width="75" Click="btn_home_Click"/>
         <Button x:Name="btn_diconnect"  Content="diconnect" HorizontalAlignment="Left" Margin="540,39,0,0" VerticalAlignment="Top" Width="75" Click="btn_diconnect_Click"/>
-        <Button x:Name="btn_aWatch_appointment"  Content="Edit appointment" HorizontalAlignment="Left" Margin="425,85,0,0" VerticalAlignment="Top" Width="160" Height="120"/>
+        <Button x:Name="btn_aWatch_appointment"  Content="Cancle appointment" HorizontalAlignment="Left" Margin="425,85,0,0" VerticalAlignment="Top" Width="160" Height="120" Click="btn_cacncle_Click"/>
         <Button x:Name="btn_aWatch_history"  Content="Watch appointment history" HorizontalAlignment="Left" Margin="20,255,0,0" VerticalAlignment="Top" Width="160" Height="120"/>
         <Button x:Name="btn_Buying_Medicine"  Content="Buying Medicine " HorizontalAlignment="Left" Margin="225,255,0,0" VerticalAlignment="Top" Width="160" Height="120"/>
         <Button x:Name="btn_Watch_test_result"  Content="Watch test result" HorizontalAlignment="Left" Margin="425,255,0,0" VerticalAlignment="Top" Width="160" Height="120"/>
@@ -20,6 +20,7 @@
         <Label x:Name="lbl_hello" Content="Label" HorizontalAlignment="Left" Margin="395,36,0,0" VerticalAlignment="Top"/>
         <local:secretary x:Name="sec" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <local:Manager x:Name="manager1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <local:CancleAppointment x:Name="cancle" HorizontalAlignment="Left"  Margin="10,61,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
 
 
     </Grid>

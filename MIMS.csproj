@@ -73,6 +73,9 @@
     <Compile Include="appointment.xaml.cs">
       <DependentUpon>appointment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CancleAppointment.xaml.cs">
+      <DependentUpon>CancleAppointment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="doctorView.xaml.cs">
       <DependentUpon>doctorView.xaml</DependentUpon>
     </Compile>
@@ -89,6 +92,10 @@
       <DependentUpon>secretary.xaml</DependentUpon>
     </Compile>
     <Page Include="appointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CancleAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
