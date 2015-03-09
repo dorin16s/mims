@@ -9,12 +9,12 @@ MIMS
 none
 false
 DEBUG;TRACE
-C:\Users\DorinS\Documents\Visual Studio 2012\Projects\MIMS\MIMS\App.xaml
-81512366460
+C:\Users\DorinS\Documents\Visual Studio 2012\Projects\MIMS\MIMS\module\App.xaml
+81221237591
 
-14-1836550194
+141578329710
 141012385901
-appointment.xaml;CancleAppointment.xaml;doctorView.xaml;Login.xaml;MainWindow.xaml;Manager.xaml;Request.xaml;secretary.xaml;
+viewModel\appointment.xaml;viewModel\CancleAppointment.xaml;viewModel\doctorView.xaml;viewModel\Login.xaml;view\MainWindow.xaml;viewModel\Manager.xaml;viewModel\Request.xaml;viewModel\secretary.xaml;
 
 False
 

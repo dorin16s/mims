@@ -66,70 +66,70 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
+    <ApplicationDefinition Include="module\App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="appointment.xaml.cs">
+    <Compile Include="viewModel\appointment.xaml.cs">
       <DependentUpon>appointment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CancleAppointment.xaml.cs">
+    <Compile Include="viewModel\CancleAppointment.xaml.cs">
       <DependentUpon>CancleAppointment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="doctorView.xaml.cs">
+    <Compile Include="viewModel\doctorView.xaml.cs">
       <DependentUpon>doctorView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Login.xaml.cs">
+    <Compile Include="viewModel\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Manager.xaml.cs">
+    <Compile Include="viewModel\Manager.xaml.cs">
       <DependentUpon>Manager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Request.xaml.cs">
+    <Compile Include="viewModel\Request.xaml.cs">
       <DependentUpon>Request.xaml</DependentUpon>
     </Compile>
-    <Compile Include="secretary.xaml.cs">
+    <Compile Include="viewModel\secretary.xaml.cs">
       <DependentUpon>secretary.xaml</DependentUpon>
     </Compile>
-    <Page Include="appointment.xaml">
+    <Page Include="viewModel\appointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CancleAppointment.xaml">
+    <Page Include="viewModel\CancleAppointment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="doctorView.xaml">
+    <Page Include="viewModel\doctorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Login.xaml">
+    <Page Include="viewModel\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="view\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AdoHelper.cs" />
-    <Compile Include="App.xaml.cs">
+    <Compile Include="module\AdoHelper.cs" />
+    <Compile Include="module\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DataQueries.cs" />
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="module\DataQueries.cs" />
+    <Compile Include="view\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Manager.xaml">
+    <Page Include="viewModel\Manager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Request.xaml">
+    <Page Include="viewModel\Request.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="secretary.xaml">
+    <Page Include="viewModel\secretary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,7 +159,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="module\App.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

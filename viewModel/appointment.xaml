@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="MIMS.appointment"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Label x:Name="DocLabel" Content="Choose Doctor:"  HorizontalAlignment="Left" Margin="45,61,0,0" VerticalAlignment="Top" Width="95"/>
+        <ComboBox x:Name="DocList"  HorizontalAlignment="Left" Margin="155,65,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="DocList_SelectionChanged"/>
+        <Label x:Name="FieldLabel" Content="Choose Field:" HorizontalAlignment="Left" Margin="45,26,0,0" VerticalAlignment="Top" Width="95"/>
+        <ComboBox  x:Name="FieldList"  HorizontalAlignment="Left" Margin="155,30,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="FieldList_SelectionChanged"/>
+        <Label x:Name="lbl_Clinic"  Content="Choose Clinic:" HorizontalAlignment="Left" Margin="45,100,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="list_Clinic" HorizontalAlignment="Left" Margin="155,100,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="list_Clinic_SelectionChanged"/>
+        <Label x:Name="lbl_day" Content="Choose Day:" HorizontalAlignment="Left" Margin="45,131,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="list_day" HorizontalAlignment="Left" Margin="155,135,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="list_day_SelectionChanged"/>
+        <Label x:Name="lbl_hour" Content="Choose Hour:" HorizontalAlignment="Left" Margin="45,166,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.263,-0.385"/>
+        <ComboBox x:Name="list_hour" HorizontalAlignment="Left" Margin="155,170,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="list_hour_SelectionChanged"/>
+        <Button x:Name="btn_schedule" Content="Schedule Appointment" HorizontalAlignment="Left" Margin="45,205,0,0" VerticalAlignment="Top" Width="125" Click="btn_schedule_Click"/>
+
+    </Grid>
+</UserControl>
