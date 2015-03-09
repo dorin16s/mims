@@ -20,7 +20,8 @@ namespace MIMS
     /// </summary>
     public partial class Login : UserControl
     {
-
+        public string type;
+        public string name;
         public event EventHandler DataAvailable;
         protected virtual void OnDataAvailable(EventArgs e)
         {
@@ -41,14 +42,32 @@ namespace MIMS
             if (idbox.Text == "")
                 MessageBox.Show("Enter ID");
             else
-                if (pasbox.Text == "")
+                if (pasbox.Password == "")
                     MessageBox.Show("Enter Password");
 
                 else
-                    if (DataQueries.CheckIDPassWord(idbox.Text, pasbox.Text))
-                        OnDataAvailable(null);
+                {
+                    string[] array = DataQueries.CheckIDPassWord(idbox.Text, pasbox.Password);
+                    if (array != null)
+                    {
+                         type = array[0];
+                            name = array[1];
+                            OnDataAvailable(null);                 
+                    }
                     else
-                        MessageBox.Show("InValid ID or Password");
+                    {
+                        array = DataQueries.CheckIDPassWordDoctor(idbox.Text, pasbox.Password);
+                        if (array != null)
+                        {
+                            type = array[0];
+                            name = array[1];
+                            OnDataAvailable(null);
+                        }
+
+                        else
+                            MessageBox.Show("InValid ID or Password");
+                    }
+                }
         }
 
      

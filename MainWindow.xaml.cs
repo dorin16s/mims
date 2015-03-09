@@ -24,6 +24,8 @@ namespace MIMS
         public MainWindow()
         {
             InitializeComponent();
+            disapere();
+            load_login();
             Loginwin.DataAvailable += new EventHandler(Login_DataAvailable);
             Docrequest.RequestAvailable += new EventHandler(request_DataAvailable);
             appointmentrequest.appointmentAvailable += new EventHandler(request_DataAvailable);
@@ -31,24 +33,68 @@ namespace MIMS
 
         void Login_DataAvailable(object sender, EventArgs e)
         {
-            load_main();
+           
+            if(Loginwin.type=="paitent")
+           
+            load_main_paitent();
+            else if (Loginwin.type=="doctor")
+                load_main_doctor();
+            else if (Loginwin.type == "nurse")
+                load_main_doctor();
+            else if (Loginwin.type == "secretary")
+                load_main_sec();
+            else if( Loginwin.type == "manager")
+                load_main_man();
             id = Loginwin.idbox.Text;
+
             
         }
 
         void request_DataAvailable(object sender, EventArgs e)
         {
-            load_main();
+            load_main_paitent();
         }
 
-        private void load_main()
+        private void load_main_paitent()
         {
             disapere();
+            lbl_hello.Content = "Hello " + Loginwin.type + ": " + Loginwin.name;
+            lbl_hello.Visibility = System.Windows.Visibility.Visible;
             btn_appointment.Visibility = System.Windows.Visibility.Visible;
             btn_request.Visibility = System.Windows.Visibility.Visible;
             btn_diconnect.Visibility = System.Windows.Visibility.Visible;
+            btn_aWatch_appointment.Visibility = System.Windows.Visibility.Visible;
+            btn_aWatch_history.Visibility = System.Windows.Visibility.Visible;
+            btn_Buying_Medicine.Visibility = System.Windows.Visibility.Visible;
+            btn_Watch_test_result.Visibility = System.Windows.Visibility.Visible;
         }
 
+        private void load_main_doctor()
+        {
+            disapere();
+            lbl_hello.Content = "Hello " + Loginwin.type + ": " + Loginwin.name;
+            lbl_hello.Visibility = System.Windows.Visibility.Visible;
+            btn_diconnect.Visibility = System.Windows.Visibility.Visible;
+            docView1.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void load_main_sec()
+        {
+            disapere();
+            lbl_hello.Content = "Hello " + Loginwin.type + ": " + Loginwin.name;
+            lbl_hello.Visibility = System.Windows.Visibility.Visible;
+            btn_diconnect.Visibility = System.Windows.Visibility.Visible;
+            sec.Visibility = System.Windows.Visibility.Visible;
+        }
+
+        private void load_main_man()
+        {
+            disapere();
+            lbl_hello.Content = "Hello " + Loginwin.type + ": " + Loginwin.name;
+            lbl_hello.Visibility = System.Windows.Visibility.Visible;
+            btn_diconnect.Visibility = System.Windows.Visibility.Visible;
+            manager1.Visibility = System.Windows.Visibility.Visible;
+        }
         private void load_login()
         {
             disapere();
@@ -73,6 +119,9 @@ namespace MIMS
         private void disapere()
         {
             Docrequest.clear();
+            docView1.Visibility = System.Windows.Visibility.Hidden;
+            sec.Visibility = System.Windows.Visibility.Hidden;
+            manager1.Visibility = System.Windows.Visibility.Hidden;
             btn_appointment.Visibility = System.Windows.Visibility.Hidden;
             btn_request.Visibility = System.Windows.Visibility.Hidden;
             Loginwin.Visibility = System.Windows.Visibility.Hidden;
@@ -80,6 +129,12 @@ namespace MIMS
             btn_home.Visibility = System.Windows.Visibility.Hidden;
             btn_diconnect.Visibility = System.Windows.Visibility.Hidden;
             appointmentrequest.Visibility = System.Windows.Visibility.Hidden;
+            btn_aWatch_appointment.Visibility = System.Windows.Visibility.Hidden;
+            btn_aWatch_history.Visibility = System.Windows.Visibility.Hidden;
+            btn_Buying_Medicine.Visibility = System.Windows.Visibility.Hidden;
+            btn_Watch_test_result.Visibility = System.Windows.Visibility.Hidden;
+            lbl_hello.Visibility = System.Windows.Visibility.Hidden;
+            
 
         }
 
@@ -104,7 +159,14 @@ namespace MIMS
         private void btn_home_Click(object sender, RoutedEventArgs e)
         {
             disapere();
-            load_main();
+            if (Loginwin.type == "paitent")
+                load_main_paitent();
+            else if (Loginwin.type == "doctor")
+                load_main_doctor();
+            else if (Loginwin.type == "secretary")
+                load_main_sec();
+            else if(Loginwin.type == "manager")
+                load_main_man();
         }
 
         private void btn_diconnect_Click(object sender, RoutedEventArgs e)
@@ -112,7 +174,7 @@ namespace MIMS
             disapere();
             load_login();
             Loginwin.idbox.Text = "";
-            Loginwin.pasbox.Text = "";
+            Loginwin.pasbox.Password = "";
 
         }
 

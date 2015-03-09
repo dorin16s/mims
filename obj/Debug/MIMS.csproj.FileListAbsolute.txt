@@ -19,3 +19,9 @@ C:\Users\DorinS\Documents\Visual Studio 2012\Projects\MIMS\MIMS\obj\Debug\Reques
 C:\Users\DorinS\Documents\Visual Studio 2012\Projects\MIMS\MIMS\obj\Debug\Request.g.cs
 C:\Users\DorinS\Documents\Visual Studio 2012\Projects\MIMS\MIMS\obj\Debug\appointment.baml
 C:\Users\DorinS\Documents\Visual Studio 2012\Projects\MIMS\MIMS\obj\Debug\appointment.g.cs
+C:\Users\DorinS\Documents\Visual Studio 2012\Projects\MIMS\MIMS\obj\Debug\doctorView.baml
+C:\Users\DorinS\Documents\Visual Studio 2012\Projects\MIMS\MIMS\obj\Debug\doctorView.g.cs
+C:\Users\DorinS\Documents\Visual Studio 2012\Projects\MIMS\MIMS\obj\Debug\secretary.baml
+C:\Users\DorinS\Documents\Visual Studio 2012\Projects\MIMS\MIMS\obj\Debug\secretary.g.cs
+C:\Users\DorinS\Documents\Visual Studio 2012\Projects\MIMS\MIMS\obj\Debug\Manager.baml
+C:\Users\DorinS\Documents\Visual Studio 2012\Projects\MIMS\MIMS\obj\Debug\Manager.g.cs

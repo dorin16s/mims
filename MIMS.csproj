@@ -73,13 +73,26 @@
     <Compile Include="appointment.xaml.cs">
       <DependentUpon>appointment.xaml</DependentUpon>
     </Compile>
+    <Compile Include="doctorView.xaml.cs">
+      <DependentUpon>doctorView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.xaml.cs">
+      <DependentUpon>Manager.xaml</DependentUpon>
     </Compile>
     <Compile Include="Request.xaml.cs">
       <DependentUpon>Request.xaml</DependentUpon>
     </Compile>
+    <Compile Include="secretary.xaml.cs">
+      <DependentUpon>secretary.xaml</DependentUpon>
+    </Compile>
     <Page Include="appointment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="doctorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -101,7 +114,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Manager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Request.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="secretary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

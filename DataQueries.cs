@@ -9,22 +9,54 @@ namespace MIMS
 {
     class DataQueries
     {
-        public static bool CheckIDPassWord(string ID,string Password )
-        { 
-            string query = "select password from paitent where id=" +ID  + " and Password="+Password;
+        public static string[] CheckIDPassWord(string ID,string Password )
+        {
+            string[] array = new string[2];
+            string query = "select * from paitent where id=" +ID  + " and Password="+Password;
             try
             {
                 DataTable dt = AdoHelper.ExecuteDataTable(query);
                 if (dt.Rows.Count == 1)
-                    return true;
+                {
+                    array[0] = "paitent";
+                    array[1] = dt.Rows[0]["name"].ToString();
+                    return array;
+                }
+
                 else
-                    return false;
+                    return null;
             }
             catch
             {
-                return false;
+                return null;
             }
         }
+
+        public static string[] CheckIDPassWordDoctor(string ID, string Password)
+        {
+            string query = "select * from worker where id=" + ID + " and Password=" + Password;
+            string[] array=new string[2];
+            try
+            {
+                DataTable dt = AdoHelper.ExecuteDataTable(query);
+                if (dt.Rows.Count == 1)
+                {
+                    array[0]=dt.Rows[0]["job"].ToString() ;
+                    array[1]=dt.Rows[0]["name"].ToString() ;
+                    return array;
+                    
+                }
+                else
+                    return null;
+            }
+            catch
+            {
+                return null;
+            }
+        
+        }
+
+
 
         public static DataTable GetDoctors(string field)
         {
